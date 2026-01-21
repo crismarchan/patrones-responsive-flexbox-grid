@@ -19,15 +19,7 @@ img {
 }
 
 h1 {
-    font-size: 3rem;
-}
-
-@media (min-width: 768px) {
-    h1 {
-         font-size: 4rem;
-         text-align: center;
-       
-    }
+    font-size: 4rem;
 }
 
 .contenedor {
@@ -49,13 +41,13 @@ h1 {
 /** CODIGO AQUI **/
 
 @media (min-width: 768px) {
-    .dos-columnas {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        column-gap: 2rem;
+    .dos-columnas{
+        display: flex;
+        justify-content: space-between;
+        gap: 2rem;
     }
+    
+ 
 }
 
-/*este codigo permite que al estar de 768px hasta más la sección de los artículos 
-se organice en dos columnas que estén divididas de un 50%*/
 
