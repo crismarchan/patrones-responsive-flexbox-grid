@@ -1,0 +1,104 @@
+/* ===============================
+   RESET Y CONFIGURACIÓN GLOBAL
+================================= */
+
+/* Hace que el cálculo de tamaños incluya padding y border */
+html {
+    box-sizing: border-box;
+
+    /* 62.5% = 10px (1rem = 10px) → facilita cálculos */
+    font-size: 62.5%;
+}
+
+/* Hereda box-sizing a todos los elementos */
+*,
+*:before,
+*:after {
+    box-sizing: inherit;
+}
+
+/* Estilos base del body */
+body {
+    font-family: 'Raleway', sans-serif;
+    font-size: 1.6rem; /* 16px */
+    line-height: 2; /* Espaciado entre líneas */
+}
+
+/* Imágenes responsivas */
+img {
+    max-width: 100%;
+}
+
+/* Tipografía */
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3.2rem;
+}
+
+p {
+    font-size: 2rem;
+}
+
+/* Contenedor principal centrado */
+.contenedor {
+    max-width: 1200px;
+    width: 95%;
+    margin: 0 auto;
+}
+
+/* Botones tipo enlace */
+.entrada-blog a {
+    display: inline-block;
+    background-color: #2196F3;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+
+/* ===============================
+   GRID RESPONSIVE 
+================================= */
+
+@media (min-width: 768px) {
+
+    .contenedor-grid {
+
+        /* Activamos CSS Grid */
+        display: grid;
+
+        /* Definimos las áreas del layout */
+        grid-template-areas: "izquierda contenido areas";
+
+        /* Definimos el tamaño de columnas */
+        grid-template-columns: 20% 60% 20%;
+
+        /* IMPORTANTE:
+           Fuerza a que los elementos se coloquen en columnas
+           en lugar de crear nuevas filas automáticamente */
+        grid-auto-flow: column;
+
+        /* Espacio entre columnas */
+        column-gap: 2rem;
+    }
+
+    /* Asignamos cada sección a su área */
+
+    .contenido-principal {
+        grid-area: contenido;
+    }
+
+    .sidebar-1 {
+        grid-area: izquierda;
+    }
+
+    
+    .sidebar-2 {
+        grid-area: areas;
+    }
+}
