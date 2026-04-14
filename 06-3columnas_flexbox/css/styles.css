@@ -1,0 +1,112 @@
+/* ===============================
+   RESET Y CONFIGURACIÓN GLOBAL
+================================= */
+
+/* Hace que padding y border no afecten el tamaño total */
+html {
+  box-sizing: border-box;
+
+  /* 1rem = 10px → facilita cálculos */
+  font-size: 62.5%;
+}
+
+/* Herencia del box-sizing */
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+/* Estilos base */
+body {
+  font-family: "Raleway", sans-serif;
+  font-size: 1.6rem; /* 16px */
+  line-height: 2;
+}
+
+/* Imágenes responsivas */
+img {
+  max-width: 100%;
+}
+
+/* Tipografía */
+h1 {
+  font-size: 4rem;
+}
+
+h2 {
+  font-size: 3.2rem;
+}
+
+p {
+  font-size: 2rem;
+}
+
+/* Contenedor centrado */
+.contenedor {
+  max-width: 1200px;
+  width: 95%;
+  margin: 0 auto;
+}
+
+/* Botones tipo enlace */
+.entrada-blog a {
+  display: inline-block;
+  background-color: #2196f3;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+
+/* ===============================
+   FLEXBOX RESPONSIVE (LAYOUT)
+================================= */
+
+@media (min-width: 768px) {
+
+  .contenedor-flex {
+
+    /* Activamos Flexbox */
+    display: flex;
+
+    /* Distribuye los elementos horizontalmente */
+    justify-content: space-between;
+
+    /* NOTA:
+       Esto crea espacio entre los elementos,
+       pero NO es la mejor práctica moderna (ver abajo gap)
+    */
+  }
+
+  /* ===============================
+     TAMAÑOS DE COLUMNAS
+  ================================= */
+
+  .contenido-principal {
+
+    /* Ocupa aproximadamente 60% del ancho */
+    /* Se resta 1rem para compensar espacios */
+    flex-basis: calc(60% - 1rem);
+  }
+
+  .sidebar {
+
+    /* Cada sidebar ocupa aproximadamente 20% */
+    flex-basis: calc(20% - 1rem);
+  }
+
+  /* ===============================
+     ORDEN VISUAL
+  ================================= */
+
+  .sidebar-1 {
+
+    /* Hace que aparezca primero visualmente */
+    order: -1;
+
+    /* Aunque en el HTML esté después */
+  }
+}
